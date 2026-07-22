@@ -203,6 +203,48 @@
     font-weight:900;font-size:.95rem;color:var(--ink-soft);
   }
 
+  /* dreams - inside his head */
+  .dreams{overflow:hidden;position:relative}
+  .dreams .sec-head{align-items:center}
+  .dreams-intro{text-align:center;font-weight:900;font-size:1.1rem;max-width:46ch;margin:0 auto}
+  .dream-scene{position:relative;max-width:720px;margin:30px auto 0;min-height:540px}
+  .frog-dreamer{
+    position:absolute;bottom:0;left:50%;transform:translateX(-78%);width:220px;
+    filter:drop-shadow(0 0 12px rgba(150,250,215,.95)) drop-shadow(0 0 40px rgba(60,235,185,.5));
+  }
+  .bubble-trail span{
+    position:absolute;border-radius:50%;background:var(--paper);border:3px solid var(--ink);
+    animation:bob 4s ease-in-out infinite;
+  }
+  .bubble-trail span:nth-child(1){width:16px;height:16px;bottom:180px;left:46%}
+  .bubble-trail span:nth-child(2){width:26px;height:26px;bottom:214px;left:50%;animation-delay:.5s}
+  .bubble-trail span:nth-child(3){width:38px;height:38px;bottom:256px;left:54%;animation-delay:1s}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  .thought-pos{position:absolute;top:0;left:50%;transform:translateX(-42%);width:min(460px,92%)}
+  .thought-bubble{
+    background:var(--paper);border:4px solid var(--ink);
+    border-radius:49% 51% 54% 46% / 58% 55% 45% 42%;
+    box-shadow:8px 8px 0 var(--ink);
+    padding:44px 40px 40px;text-align:center;
+    animation:bubble-float 6s ease-in-out infinite;
+  }
+  @keyframes bubble-float{0%,100%{transform:translateY(0) rotate(-.6deg)}50%{transform:translateY(-10px) rotate(.6deg)}}
+  .thought-bubble.pop .dream-inner{animation:dream-pop .45s ease}
+  @keyframes dream-pop{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.06)}100%{transform:scale(1);opacity:1}}
+  .dream-art{width:min(200px,64%);display:block;margin:0 auto 10px}
+  .dream-text{font-weight:900;font-size:1.12rem;margin:0}
+  .dream-cta{text-align:center;margin-top:28px}
+  .dreams .drift-star{position:absolute;color:var(--ink);opacity:.35;font-size:1.05rem;animation:twinkle 4s ease-in-out infinite}
+  @media(max-width:640px){
+    .dream-scene{min-height:610px}
+    .thought-pos{transform:translateX(-50%)}
+    .thought-bubble{padding:36px 26px 32px}
+    .frog-dreamer{transform:translateX(-50%);width:190px}
+    .bubble-trail span:nth-child(1){left:42%;bottom:210px}
+    .bubble-trail span:nth-child(2){left:48%;bottom:246px}
+    .bubble-trail span:nth-child(3){left:55%;bottom:288px}
+  }
+
   /* frognomics - night field */
   .night{
     background:linear-gradient(180deg,var(--night-2),var(--night));
@@ -347,6 +389,41 @@
       </g>
       <use href="#p-head" fill="none" stroke="#2c4413" stroke-width="8" stroke-linejoin="round"/>
     </g>
+
+    <!-- his dreams -->
+    <g id="dream-moonflag">
+      <circle cx="100" cy="92" r="46" fill="#ececf1" stroke="#2c4413" stroke-width="6"/>
+      <circle cx="84" cy="78" r="9" fill="#cfcfda"/>
+      <circle cx="116" cy="102" r="11" fill="#cbcbd7"/>
+      <circle cx="92" cy="112" r="6" fill="#d8d8e2"/>
+      <circle cx="118" cy="72" r="5" fill="#d8d8e2"/>
+      <path d="M100 46 L100 10" stroke="#2c4413" stroke-width="6" stroke-linecap="round"/>
+      <path d="M100 12 L144 22 L100 34 Z" fill="#2a52cc" stroke="#2c4413" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M40 34 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 Z" fill="#2c4413" opacity=".5"/>
+      <path d="M160 54 l2.5 7 7 2.5 -7 2.5 -2.5 7 -2.5 -7 -7 -2.5 7 -2.5 Z" fill="#2c4413" opacity=".5"/>
+    </g>
+    <g id="dream-chart">
+      <path d="M38 20 L38 116 L170 116" fill="none" stroke="#2c4413" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M52 102 L80 78 L104 88 L134 50 L152 34" fill="none" stroke="#2a52cc" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M148 22 L168 26 L158 44 Z" fill="#2a52cc" stroke="#2c4413" stroke-width="4" stroke-linejoin="round"/>
+    </g>
+    <g id="dream-rocket">
+      <path d="M100 12 C120 32 128 62 123 94 L77 94 C72 62 80 32 100 12 Z" fill="#ececf1" stroke="#2c4413" stroke-width="6" stroke-linejoin="round"/>
+      <circle cx="100" cy="56" r="13" fill="#b9e424" stroke="#2c4413" stroke-width="5"/>
+      <path d="M77 72 C60 80 54 96 54 110 L77 98 Z" fill="#2a52cc" stroke="#2c4413" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M123 72 C140 80 146 96 146 110 L123 98 Z" fill="#2a52cc" stroke="#2c4413" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M88 96 C89 114 95 128 100 138 C105 128 111 114 112 96 Z" fill="#f0a12e" stroke="#2c4413" stroke-width="5" stroke-linejoin="round"/>
+    </g>
+    <g id="dream-crown">
+      <path d="M52 92 L42 34 L76 62 L100 22 L124 62 L158 34 L148 92 Z" fill="#f2cf3a" stroke="#2c4413" stroke-width="6" stroke-linejoin="round"/>
+      <path d="M52 92 L148 92 L145 112 L55 112 Z" fill="#f2cf3a" stroke="#2c4413" stroke-width="6" stroke-linejoin="round"/>
+      <circle cx="76" cy="102" r="5" fill="#2a52cc"/>
+      <circle cx="100" cy="102" r="5" fill="#6f9f44"/>
+      <circle cx="124" cy="102" r="5" fill="#a05c22"/>
+    </g>
+    <g id="dream-moon">
+      <use href="#moon-art" transform="translate(48,20) scale(0.52)"/>
+    </g>
   </defs>
 </svg>
 
@@ -354,6 +431,7 @@
   <a class="wordmark" href="#top">$IMAGINE</a>
   <div class="navlinks">
     <a href="#lore">the lore</a>
+    <a href="#dreams">his dreams</a>
     <a href="#frognomics">frognomics</a>
     <a href="#how">how to buy</a>
     <a class="btn" href="https://dexscreener.com/robinhood/0x4b54E8ED319fd091Ed7503C946f404943C6EfF1e" target="_blank" rel="noopener">Buy $IMAGINE</a>
@@ -405,6 +483,32 @@
         </svg>
         <figcaption>him. every single night.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="dreams" id="dreams">
+    <span class="drift-star" style="top:12%;left:10%">&#10022;</span>
+    <span class="drift-star" style="top:22%;right:12%;animation-delay:1.2s">&#10022;</span>
+    <span class="drift-star" style="top:64%;left:6%;animation-delay:.7s">&#10022;</span>
+    <span class="drift-star" style="top:70%;right:8%;animation-delay:2s">&#10022;</span>
+    <div class="wrap">
+      <div class="sec-head"><h2>Inside his head</h2></div>
+      <p class="dreams-intro">Science says a frog's brain is the size of a pea. His is 97% dreams. Here's what plays in there on loop:</p>
+      <div class="dream-scene">
+        <div class="thought-pos">
+          <div class="thought-bubble" id="dreamBubble">
+            <div class="dream-inner">
+              <svg class="dream-art" viewBox="0 0 200 150" aria-hidden="true"><use id="dreamArt" href="#dream-moonflag"/></svg>
+              <p class="dream-text" id="dreamText">planting his flag up there. HIS flag.</p>
+            </div>
+          </div>
+        </div>
+        <div class="bubble-trail" aria-hidden="true"><span></span><span></span><span></span></div>
+        <svg class="frog-dreamer" viewBox="72 84 376 492" aria-hidden="true"><use href="#frog-art"/></svg>
+      </div>
+      <div class="dream-cta">
+        <button class="btn" onclick="nextDream()">dream another dream</button>
+      </div>
     </div>
   </section>
 
@@ -523,6 +627,39 @@
       onFail();
     }
   }
+
+  var dreams = [
+    {art:"#dream-moonflag", text:"planting his flag up there. HIS flag."},
+    {art:"#dream-chart", text:"a chart that only knows one direction"},
+    {art:"#dream-rocket", text:"a lily pad with boosters"},
+    {art:"#dream-crown", text:"king of the pond. king of everything."},
+    {art:"#dream-moon", text:"touching it. just once."}
+  ];
+  var dreamIndex = 0, dreamTimer = null;
+  function showDream(i){
+    var use = document.getElementById("dreamArt");
+    var txt = document.getElementById("dreamText");
+    var bubble = document.getElementById("dreamBubble");
+    if(!use || !txt || !bubble) return;
+    use.setAttribute("href", dreams[i].art);
+    txt.textContent = dreams[i].text;
+    bubble.classList.remove("pop");
+    void bubble.offsetWidth;
+    bubble.classList.add("pop");
+  }
+  function nextDream(){
+    dreamIndex = (dreamIndex + 1) % dreams.length;
+    showDream(dreamIndex);
+    startDreamTimer();
+  }
+  function startDreamTimer(){
+    if(dreamTimer) clearInterval(dreamTimer);
+    dreamTimer = setInterval(function(){
+      dreamIndex = (dreamIndex + 1) % dreams.length;
+      showDream(dreamIndex);
+    }, 6000);
+  }
+  startDreamTimer();
 </script>
 </body>
 </html>
